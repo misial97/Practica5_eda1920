@@ -94,6 +94,7 @@ public abstract class Practica5Utils<E>  implements BinarySearchTree<E>{
             else
                 limit = true;
         }
+        //Invertimos la lista
         Collections.reverse(list);
         return list;
     }
