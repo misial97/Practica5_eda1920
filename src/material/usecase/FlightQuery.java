@@ -43,7 +43,7 @@ public class FlightQuery {
         this.bstByDates = new LinkedBinarySearchTree<>(this.compareByDate);
         this.bstByDestinations = new LinkedBinarySearchTree<>(this.compareByDestination);
         this.bstByCompanyAndCode = new LinkedBinarySearchTree<>(this.compareByCompanyAndCode);
-    /*
+        /*
         this.bstByDates = new AVLTree<>(this.compareByDate);
         this.bstByDestinations = new AVLTree<>(this.compareByDestination);
         this.bstByCompanyAndCode = new AVLTree<>(this.compareByCompanyAndCode);
@@ -51,43 +51,7 @@ public class FlightQuery {
         this.bstByDates = new RBTree<>(this.compareByDate);
         this.bstByDestinations = new RBTree<>(this.compareByDestination);
         this.bstByCompanyAndCode = new RBTree<>(this.compareByCompanyAndCode);
-     */
-    }
-
-    private void initializeComparators(){
-        this.compareByDate = new Comparator<Flight>() {
-            @Override
-            public int compare(Flight o1, Flight o2) {
-                int diffYear = o1.getYear() - o2.getYear();
-                int diffMonth = o1.getMonth() - o2.getMonth();
-                int diffDay = o1.getDay() - o2.getDay();
-                if(diffYear != 0)
-                    return diffYear;
-                if(diffMonth != 0)
-                    return diffMonth;
-                if(diffDay != 0)
-                    return diffDay;
-                return 0;
-            }
-        };
-        this.compareByDestination = new Comparator<Flight>() {
-            @Override
-            public int compare(Flight o1, Flight o2) {
-                return o1.getDestination().compareTo(o2.getDestination());
-            }
-        };
-        this.compareByCompanyAndCode = new Comparator<Flight>() {
-            @Override
-            public int compare(Flight o1, Flight o2) {
-                int compareCompany = o1.getCompany().compareTo(o2.getCompany());
-                int compareFlightCode= o1.getFlightCode() - o2.getFlightCode();
-
-                if(compareCompany != 0)
-                    return compareCompany;
-
-                return compareFlightCode;
-            }
-        };
+        */
     }
 
     public void addFlight(Flight flight) {
@@ -148,5 +112,42 @@ public class FlightQuery {
         }
         return resultQuery;
 
+    }
+
+    // Un comparador por cada tipo de orden que se necesita en las insercciones (fecha, destino o company+code)
+    private void initializeComparators(){
+        this.compareByDate = new Comparator<Flight>() {
+            @Override
+            public int compare(Flight o1, Flight o2) {
+                int diffYear = o1.getYear() - o2.getYear();
+                int diffMonth = o1.getMonth() - o2.getMonth();
+                int diffDay = o1.getDay() - o2.getDay();
+                if(diffYear != 0)
+                    return diffYear;
+                if(diffMonth != 0)
+                    return diffMonth;
+                if(diffDay != 0)
+                    return diffDay;
+                return 0;
+            }
+        };
+        this.compareByDestination = new Comparator<Flight>() {
+            @Override
+            public int compare(Flight o1, Flight o2) {
+                return o1.getDestination().compareTo(o2.getDestination());
+            }
+        };
+        this.compareByCompanyAndCode = new Comparator<Flight>() {
+            @Override
+            public int compare(Flight o1, Flight o2) {
+                int compareCompany = o1.getCompany().compareTo(o2.getCompany());
+                int compareFlightCode= o1.getFlightCode() - o2.getFlightCode();
+
+                if(compareCompany != 0)
+                    return compareCompany;
+
+                return compareFlightCode;
+            }
+        };
     }
 }

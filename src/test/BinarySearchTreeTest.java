@@ -1,8 +1,10 @@
 package test;
 
 import material.Position;
+import material.tree.binarysearchtree.AVLTree;
 import material.tree.binarysearchtree.BinarySearchTree;
 import material.tree.binarysearchtree.LinkedBinarySearchTree;
+import material.tree.binarysearchtree.RBTree;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -17,9 +19,9 @@ class BinarySearchTreeTest {
 
     public BinarySearchTree<Integer> newBST(){
         //TODO: Aqui se define la implementacion a comprobar
-        return new LinkedBinarySearchTree<>();
-//        return new AVLTree<>();
-//        return new RBTree<>();
+          return new LinkedBinarySearchTree<>();
+  //      return new AVLTree<>();
+     //   return new RBTree<>();
     }
 
 
