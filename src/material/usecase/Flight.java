@@ -2,6 +2,10 @@ package material.usecase;
 
 import material.maps.HashTableMapLP;
 
+/**
+ * Realizado por: Miguel Sierra Alonso
+ *
+ * */
 public class Flight {
 
     private int hours, minutes;
