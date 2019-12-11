@@ -10,6 +10,8 @@ import java.util.*;
  *
  * @author A. Duarte, J. Vélez
  */
+
+// Extiende de Practica5Utils, asi hereda los metodos de los dos primeros ejercicios.
 public class AVLTree<E>  extends Practica5Utils<E> {
 
     //We need this class to store the height of each BTNode

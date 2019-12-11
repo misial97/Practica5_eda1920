@@ -10,6 +10,7 @@ import java.util.*;
  * @author A. Duarte, J. Vélez
  */
 
+// Extiende de Practica5Utils, asi hereda los metodos de los dos primeros ejercicios.
 public class RBTree<E> extends Practica5Utils<E> {
 
 //Esta clase es necesaria para guardar el color de los nodos BTNodes

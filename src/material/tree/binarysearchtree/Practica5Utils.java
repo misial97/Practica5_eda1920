@@ -8,11 +8,16 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- *  Clase abstracta que engloba los metodos de los dos primeros ejercicios con fin de evitar duplicidad de código
+ *
+ *  Clase abstracta que engloba los metodos de los dos primeros ejercicios con fin de evitar duplicidad de código.
+ *  De esta manera, cada arbol tendrá su propia implementacion de los metodos de BinarySearchTree y además
+ *  se podrán usar los metodos de esta clasede esta clase en cada implementacion (AVLTree, RBTree y LinkedBinaryTree)
+ *  con tan solo incluir "extends Practica5Utils<E>" en la cabecera de cada impl. del BST.
  *
  *  Realizado por: Miguel Sierra Alonso
  *
  * */
+
 public abstract class Practica5Utils<E>  implements BinarySearchTree<E>{
 
     public Iterable<Position<E>> findRange(E minValue, E maxValue) throws RuntimeException {

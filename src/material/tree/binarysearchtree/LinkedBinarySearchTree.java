@@ -12,6 +12,7 @@ import java.util.*;
  */
 
 
+// Extiende de Practica5Utils, asi hereda los metodos de los dos primeros ejercicios.
 public class LinkedBinarySearchTree<E> extends Practica5Utils<E> {
 
 
